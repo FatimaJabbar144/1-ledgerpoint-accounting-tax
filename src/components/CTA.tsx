@@ -1,0 +1,3 @@
+import type { LedgerPointData } from "@/types/ledgerpoint";
+
+export function CTA({ data }: { data: LedgerPointData["cta"] }) { return <section className="bg-navy py-16 text-white md:py-[76px]"><div className="container md:flex md:items-center md:justify-between"><div><p className="eyebrow text-[#a6cfca]">{data.eyebrow}</p><h2 className="mb-0 mt-4 text-[clamp(2.3rem,4vw,4rem)] font-semibold">{data.title}<br /><em>{data.accentTitle}</em></h2></div><div className="mt-7 md:mt-0 md:flex md:items-center md:gap-7"><p className="mb-5 text-sm text-[#ccd7d8] md:mb-0">{data.description}</p><a href="#contact" className="button border-white bg-white text-navy hover:bg-[#e9f3f0]">{data.buttonLabel} <span>↗</span></a></div></div></section>; }

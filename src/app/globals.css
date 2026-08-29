@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --navy: #12304A; --teal: #2E8C87; --cream: #F7F8F5; --fog: #EEF1F0; --charcoal: #263238; --muted: #647276; --line: #DCE4E1; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; overflow-x: hidden; background: var(--cream); color: var(--charcoal); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { letter-spacing: -.045em; line-height: 1.05; }
+em { color: var(--teal); font-family: Georgia, serif; font-weight: 500; }
+button, input, select, textarea { font: inherit; }
+input, select, textarea { border-radius: 0; }
+@layer components {
+  .container { @apply mx-auto w-[calc(100%-40px)] max-w-[1160px]; }
+  .eyebrow { @apply m-0 text-[10px] font-bold uppercase tracking-[.16em] text-teal; }
+  .eyebrow::before { content: ""; @apply mr-2 inline-block w-7 align-middle border-t border-teal; }
+  .button { @apply inline-flex items-center gap-5 border border-teal bg-teal px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#267974]; }
+  .text-link { @apply text-sm font-bold text-navy transition hover:text-teal; }
+  .image-frame { @apply relative overflow-hidden; }
+  .image-frame::before { content: ""; @apply absolute inset-[12px_-12px_-12px_12px] border border-teal; }
+}
+@media (min-width: 700px) { .container { width: min(100% - 80px, 1160px); } }
